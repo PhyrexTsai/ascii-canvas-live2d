@@ -1,6 +1,6 @@
 {
   "name": "@phyrex/ascii-canvas-live2d",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Web Component that renders Live2D models as live ASCII art. Built on @phyrex/ascii-canvas + pixi-live2d-display.",
   "type": "module",
   "main": "./dist/index.js",
