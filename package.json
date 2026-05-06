@@ -1,0 +1,63 @@
+{
+  "name": "@phyrextsai/ascii-canvas-live2d",
+  "version": "0.0.1",
+  "description": "Web Component that renders Live2D models as live ASCII art. Built on @phyrex/ascii-canvas + pixi-live2d-display.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "demo:build": "vite build",
+    "demo:preview": "vite preview",
+    "build": "tsc -p tsconfig.lib.json",
+    "typecheck": "tsc --noEmit && tsc -p tsconfig.lib.json --noEmit",
+    "clean": "rm -rf dist dist-demo _site",
+    "prepublishOnly": "npm run typecheck && npm run build"
+  },
+  "keywords": [
+    "live2d",
+    "ascii",
+    "ascii-art",
+    "web-component",
+    "custom-element",
+    "pixi",
+    "cubism"
+  ],
+  "author": "Phyrex Tsai <kammyblack@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@phyrex/ascii-canvas": "^1.0.1"
+  },
+  "peerDependencies": {
+    "pixi-live2d-display": "^0.4.0",
+    "pixi.js": "^6.5.10"
+  },
+  "devDependencies": {
+    "pixi-live2d-display": "^0.4.0",
+    "pixi.js": "^6.5.10",
+    "typescript": "^5.4.0",
+    "vite": "^5.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phyrextsai/ascii-canvas-live2d.git"
+  },
+  "bugs": {
+    "url": "https://github.com/phyrextsai/ascii-canvas-live2d/issues"
+  },
+  "homepage": "https://github.com/phyrextsai/ascii-canvas-live2d#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}

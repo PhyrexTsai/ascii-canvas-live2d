@@ -1,0 +1,136 @@
+:root {
+  --bg: #0a0a0c;
+  --fg: #e8e8ea;
+  --muted: #7a7a82;
+  --accent: #7dd3fc;
+  --border: #1a1a20;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  min-height: 100vh;
+}
+
+header {
+  padding: 24px 32px 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+header .sub {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--border);
+  padding: 1px;
+}
+
+.pane {
+  background: var(--bg);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.pane h2 {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  align-self: flex-start;
+}
+
+ascii-canvas-live2d {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  background: #050507;
+  border: 1px solid var(--border);
+}
+
+.controls {
+  padding: 12px 32px;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 12px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.controls select {
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  padding: 4px 8px;
+  font-family: inherit;
+  font-size: 12px;
+  margin-left: 6px;
+}
+
+.controls label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.controls input[type="range"] {
+  width: 100px;
+  accent-color: var(--accent);
+}
+
+.controls button {
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.controls button:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.controls button:disabled,
+.controls select:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.attribution {
+  padding: 8px 32px 16px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.attribution a {
+  color: var(--accent);
+}
