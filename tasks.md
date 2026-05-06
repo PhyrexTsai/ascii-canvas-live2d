@@ -38,7 +38,7 @@
 
 ## 變更紀錄
 
-- **2026-05-05**：repo 從先前的 `live2d-ascii/` prototype 重命名而來，套件名定為 `@phyrextsai/ascii-canvas-live2d`（`live2d-ascii` unscoped 雖可用，但採配對命名以反映 ascii-canvas 的依賴關係）。`git init` 完成。
+- **2026-05-05**：repo 從先前的 `live2d-ascii/` prototype 重命名而來，套件名定為 `@phyrex/ascii-canvas-live2d`（`live2d-ascii` unscoped 雖可用，但採配對命名以反映 ascii-canvas 的依賴關係）。`git init` 完成。
 - **2026-05-05**：Phase 0 完成（除推 GitHub 外）。`package.json` 改寫為 scoped + ESM + MIT + peer/dev dependencies 雙列（pixi.js / pixi-live2d-display 同列 peer + dev，lib 不打包但 demo 跑得動），`build` script 留給未來 `tsconfig.lib.json`（Phase 1）。`.gitignore` / `LICENSE` / `README.md` 就位。`npm install` 通過（120 packages，4 個 vulnerability 為 pixi v6 既有，留待後續處理）；`npx tsc --noEmit` exit 0。
 - **2026-05-06**：Phase 1 主體完成。Dependency 從 `@phyrextsai/ascii-canvas`（原計畫 sibling repo + `npm link`）改成 `@phyrex/ascii-canvas@^1.0.1`（已發 npm，零依賴 2.3KB，作為 regular dep 不外漏給 user）。實作 `src/element.ts` + `src/index.ts`；刪除 `src/ascii.ts` + `src/main.ts`；demo 移到 `demo/`；新增 `tsconfig.lib.json`；`vite.config.ts` 改為 `root: demo`、`outDir: dist-demo`。Maid model 從 shikigami 拷過來作 dev 測試（已 .gitignore，Phase 2 替換成 Cubism 官方範例前不 commit）。
 - **2026-05-06**：Phase 2 部分完成。Demo 模型從 Maid（shikigami 私有）換成 Cubism 官方 sample **Mao**（從 `~/.shikigami/models/Mao` 拷貝；使用 Live2D Free Material License）。`public/assets/live2d/Mao/` 取代 `Maid/`；`.gitignore` 移除 Maid 排除規則（Mao 是可散佈的官方範例，要 commit 進 repo 跟著 demo 一起發）。README + demo footer 加 attribution。剩 GH Pages workflow 跟 2-3/2-4/2-5/2-7 人工驗證未做。
@@ -50,7 +50,7 @@
 | # | 項目 | 決定 | 狀態 |
 |---|---|---|---|
 | D1 | Repo 名 | `phyrextsai/ascii-canvas-live2d` | ✅ 2026-05-05 |
-| D2 | npm 套件名 | `@phyrextsai/ascii-canvas-live2d` | ✅ 2026-05-05 |
+| D2 | npm 套件名 | `@phyrex/ascii-canvas-live2d` | ✅ 2026-05-05 |
 | D3 | License | MIT | ✅ |
 | D4 | `ascii-canvas` 取得方式 | `npm install @phyrex/ascii-canvas@^1.0.1`（regular dep，已發 npm） | ✅ 2026-05-06（修正：原計畫 npm link sibling 已過時） |
 | D5 | Demo 模型 | Phase 1 dev：shikigami Maid（gitignored）；Phase 2：Cubism 官方 Hiyori 或 Mark | ⏳ Phase 2 替換 |
@@ -62,7 +62,7 @@
 
 ## Phase 0：Repo 初始化（半天）
 
-- [x] 確認 `@phyrextsai/ascii-canvas-live2d` npm 名稱可用（404）
+- [x] 確認 `@phyrex/ascii-canvas-live2d` npm 名稱可用（404）
 - [x] 從 `live2d-ascii/` rename 過來
 - [x] `git init`（2026-05-05）
 - [x] `tasks.md`（本檔）
@@ -150,7 +150,7 @@
 | # | 驗證項 |
 |---|---|
 | 3-1 | `npm publish --dry-run --access public` 通過 | ✅ 2026-05-06 |
-| 3-2 | scratch 專案手動 install pixi + pixi-live2d-display + @phyrextsai/ascii-canvas-live2d 後能跑 | ⏳ |
+| 3-2 | scratch 專案手動 install pixi + pixi-live2d-display + @phyrex/ascii-canvas-live2d 後能跑 | ⏳ |
 | 3-3 | tarball < 30kb（peer 沒被打包應該很小） | ✅ 9.6KB packed / 33.1KB unpacked |
 
 ---

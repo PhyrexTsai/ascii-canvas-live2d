@@ -1,4 +1,4 @@
-# @phyrextsai/ascii-canvas-live2d
+# @phyrex/ascii-canvas-live2d
 
 > Drop-in Web Component that renders **any Live2D model as live ASCII art** in the browser.
 
@@ -22,7 +22,7 @@ Built on [`@phyrex/ascii-canvas`](https://www.npmjs.com/package/@phyrex/ascii-ca
 ### Install
 
 ```sh
-npm install @phyrextsai/ascii-canvas-live2d pixi.js@^6 pixi-live2d-display@^0.4
+npm install @phyrex/ascii-canvas-live2d pixi.js@^6 pixi-live2d-display@^0.4
 ```
 
 `pixi.js` and `pixi-live2d-display` are **peer dependencies** — you install them so multiple consumers don't end up with conflicting copies (especially important if you also use Live2D elsewhere in the same app).
@@ -50,7 +50,7 @@ npm install @phyrextsai/ascii-canvas-live2d pixi.js@^6 pixi-live2d-display@^0.4
     <script type="module">
       // Side-effect import — registers <ascii-canvas-live2d> and <ascii-canvas>
       // automatically. No setup function to call.
-      import "@phyrextsai/ascii-canvas-live2d";
+      import "@phyrex/ascii-canvas-live2d";
     </script>
   </body>
 </html>
