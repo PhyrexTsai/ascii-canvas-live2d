@@ -6,3 +6,6 @@ dist-demo/
 
 # Mao is a Cubism SDK official sample model — distributable under
 # Live2D Free Material License. Phase 2 ships it; nothing to ignore.
+
+# Local planning, not for distribution
+tasks.md
