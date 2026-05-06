@@ -2,7 +2,7 @@
 
 > Drop-in Web Component that renders **any Live2D model as live ASCII art** in the browser.
 
-**Status: WIP — not yet published to npm.** See [tasks.md](./tasks.md) for roadmap.
+**Status: WIP — not yet published to npm.**
 
 Built on [`@phyrex/ascii-canvas`](https://www.npmjs.com/package/@phyrex/ascii-canvas) (the ASCII renderer) + [`pixi-live2d-display`](https://github.com/guansss/pixi-live2d-display) (Live2D runtime). The browser-side combination of Live2D and ASCII rendering does not exist elsewhere as a published library — this is the first.
 
@@ -167,7 +167,7 @@ For lip-sync, hit-area handling, and parameter-level control, see [`pixi-live2d-
 | **Pixi version** | `^6` only — `pixi-live2d-display@0.4` does not yet support Pixi 7 / 8. |
 | **Cubism Core script** | Must be loaded via Live2D's official CDN. Their [Proprietary License](https://www.live2d.com/en/sdk/license/) prohibits self-hosting. |
 | **CORS** | Cross-origin model files need server-side `Access-Control-Allow-Origin`. The lib uses `getImageData` internally, which throws `SecurityError` on tainted canvases. |
-| **No high-level motion / lip-sync wrappers** | By design. The `model` getter exposes the raw `Live2DModel` (see API section above) — call `model.motion(...)` / `model.expression(...)` / lip-sync APIs directly via `pixi-live2d-display`. We're not wrapping those (see [tasks.md](./tasks.md) "不做清單"). |
+| **No high-level motion / lip-sync wrappers** | By design. The `model` getter exposes the raw `Live2DModel` (see API section above) — call `model.motion(...)` / `model.expression(...)` / lip-sync APIs directly via `pixi-live2d-display`. Wrapping those is out of scope for this lib. |
 
 ---
 
